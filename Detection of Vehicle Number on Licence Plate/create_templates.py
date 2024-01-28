@@ -6,7 +6,21 @@ def read_image(file_path):
     return np.array(Image.open(file_path).convert('L'))
 
 # Letter
+
+
+# Resize function
+def resize_image(image, target_height):
+    current_height = image.shape[0]
+    ratio = target_height / current_height
+    return np.array(Image.fromarray(image).resize((int(image.shape[1] * ratio), target_height)))
+
+# Function to read images with resizing
+def read_resized_image(file_path, target_height):
+    return resize_image(np.array(Image.open(file_path).convert('L')), target_height)
+
+# Letter
 def create_templates():
+
     path_full = "Character Images\\"
     A = read_image(path_full+'A.bmp')
     B = read_image(path_full+'B.bmp')
@@ -68,10 +82,20 @@ def create_templates():
     number = [one, two, three, four, fourfill, five,
               six, sixfill, sixfill2, seven, eight, eightfill, nine, ninefill, ninefill2, zero, zerofill]
 
-    character = np.concatenate((letter, number), axis=1)
+    # Resize images to have the same number of rows
+    target_height = max(max(img.shape[0] for img in letter), max(img.shape[0] for img in number))
+    letter_resized = [resize_image(img, target_height) for img in letter]
+    number_resized = [resize_image(img, target_height) for img in number]
+
+    # Concatenate resized arrays
+    character = np.concatenate((letter_resized, number_resized), axis=1)
 
     # Reshape to create templates
     NewTemplates = np.split(character, 42, axis=1)
 
     # Save templates
     np.savez('NewTemplates', *NewTemplates)
+
+# Call the function
+create_templates()
+
