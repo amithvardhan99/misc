@@ -1,67 +1,77 @@
 from PIL import Image
+import numpy as np
 
-A = Image.open('A.bmp')
-B = Image.open('B.bmp')
-C = Image.open('C.bmp')
-D = Image.open('D.bmp')
-E = Image.open('E.bmp')
-F = Image.open('F.bmp')
-G = Image.open('G.bmp')
-H = Image.open('H.bmp')
-I = Image.open('I.bmp')
-J = Image.open('J.bmp')
-K = Image.open('K.bmp')
-L = Image.open('L.bmp')
-M = Image.open('M.bmp')
-N = Image.open('N.bmp')
-O = Image.open('O.bmp')
-P = Image.open('P.bmp')
-Q = Image.open('Q.bmp')
-R = Image.open('R.bmp')
-S = Image.open('S.bmp')
-T = Image.open('T.bmp')
-U = Image.open('U.bmp')
-V = Image.open('V.bmp')
-W = Image.open('W.bmp')
-X = Image.open('X.bmp')
-Y = Image.open('Y.bmp')
-Z = Image.open('Z.bmp')
-Afill = Image.open('fillA.bmp')
-Bfill = Image.open('fillB.bmp')
-Dfill = Image.open('fillD.bmp')
-Ofill = Image.open('fillO.bmp')
-Pfill = Image.open('fillP.bmp')
-Qfill = Image.open('fillQ.bmp')
-Rfill = Image.open('fillR.bmp')
+# Function to read images
+def read_image(file_path):
+    return np.array(Image.open(file_path).convert('L'))
 
-# Number
-one = Image.open('1.bmp')
-two = Image.open('2.bmp')
-three = Image.open('3.bmp')
-four = Image.open('4.bmp')
-five = Image.open('5.bmp')
-six = Image.open('6.bmp')
-seven = Image.open('7.bmp')
-eight = Image.open('8.bmp')
-nine = Image.open('9.bmp')
-zero = Image.open('0.bmp')
-zerofill = Image.open('fill0.bmp')
-fourfill = Image.open('fill4.bmp')
-sixfill = Image.open('fill6.bmp')
-sixfill2 = Image.open('fill6_2.bmp')
-eightfill = Image.open('fill8.bmp')
-ninefill = Image.open('fill9.bmp')
-ninefill2 = Image.open('fill9_2.bmp')
+# Letter
+def create_templates():
+    path_full = "Character Images\\"
+    A = read_image(path_full+'A.bmp')
+    B = read_image(path_full+'B.bmp')
+    C = read_image(path_full+'C.bmp')
+    D = read_image(path_full+'D.bmp')
+    E = read_image(path_full+'E.bmp')
+    F = read_image(path_full+'F.bmp')
+    G = read_image(path_full+'G.bmp')
+    H = read_image(path_full+'H.bmp')
+    I = read_image(path_full+'I.bmp')
+    J = read_image(path_full+'J.bmp')
+    K = read_image(path_full+'K.bmp')
+    L = read_image(path_full+'L.bmp')
+    M = read_image(path_full+'M.bmp')
+    N = read_image(path_full+'N.bmp')
+    O = read_image(path_full+'O.bmp')
+    P = read_image(path_full+'P.bmp')
+    Q = read_image(path_full+'Q.bmp')
+    R = read_image(path_full+'R.bmp')
+    S = read_image(path_full+'S.bmp')
+    T = read_image(path_full+'T.bmp')
+    U = read_image(path_full+'U.bmp')
+    V = read_image(path_full+'V.bmp')
+    W = read_image(path_full+'W.bmp')
+    X = read_image(path_full+'X.bmp')
+    Y = read_image(path_full+'Y.bmp')
+    Z = read_image(path_full+'Z.bmp')
+    Afill = read_image(path_full+'fillA.bmp')
+    Bfill = read_image(path_full+'fillB.bmp')
+    Dfill = read_image(path_full+'fillD.bmp')
+    Ofill = read_image(path_full+'fillO.bmp')
+    Pfill = read_image(path_full+'fillP.bmp')
+    Qfill = read_image(path_full+'fillQ.bmp')
+    Rfill = read_image(path_full+'fillR.bmp')
 
-# Concatenate images
-letter = [A, Afill, B, Bfill, C, D, Dfill, E, F, G, H, I, J, K, L, M,
-          N, O, Ofill, P, Pfill, Q, Qfill, R, Rfill, S, T, U, V, W, X, Y, Z]
+    # Number
+    one = read_image(path_full+'1.bmp')
+    two = read_image(path_full+'2.bmp')
+    three = read_image(path_full+'3.bmp')
+    four = read_image(path_full+'4.bmp')
+    five = read_image(path_full+'5.bmp')
+    six = read_image(path_full+'6.bmp')
+    seven = read_image(path_full+'7.bmp')
+    eight = read_image(path_full+'8.bmp')
+    nine = read_image(path_full+'9.bmp')
+    zero = read_image(path_full+'0.bmp')
+    zerofill = read_image(path_full+'fill0.bmp')
+    fourfill = read_image(path_full+'fill4.bmp')
+    sixfill = read_image(path_full+'fill6.bmp')
+    sixfill2 = read_image(path_full+'fill6_2.bmp')
+    eightfill = read_image(path_full+'fill8.bmp')
+    ninefill = read_image(path_full+'fill9.bmp')
+    ninefill2 = read_image(path_full+'fill9_2.bmp')
 
-number = [one, two, three, four, fourfill, five, six, sixfill, sixfill2,
-          seven, eight, eightfill, nine, ninefill, ninefill2, zero, zerofill]
+    # Combine letters and numbers
+    letter = [A, Afill, B, Bfill, C, D, Dfill, E, F, G, H, I, J, K, L, M,
+              N, O, Ofill, P, Pfill, Q, Qfill, R, Rfill, S, T, U, V, W, X, Y, Z]
 
-character = letter + number
+    number = [one, two, three, four, fourfill, five,
+              six, sixfill, sixfill2, seven, eight, eightfill, nine, ninefill, ninefill2, zero, zerofill]
 
-# Save as new templates
-for idx, img in enumerate(character):
-    img.save(f'Template_{idx}.bmp')
+    character = np.concatenate((letter, number), axis=1)
+
+    # Reshape to create templates
+    NewTemplates = np.split(character, 42, axis=1)
+
+    # Save templates
+    np.savez('NewTemplates', *NewTemplates)
