@@ -20,7 +20,6 @@ def read_resized_image(file_path, target_height):
 
 # Letter
 def create_templates():
-
     path_full = "Character Images\\"
     A = read_image(path_full+'A.bmp')
     B = read_image(path_full+'B.bmp')
@@ -86,6 +85,7 @@ def create_templates():
     target_height = max(max(img.shape[0] for img in letter), max(img.shape[0] for img in number))
     letter_resized = [resize_image(img, target_height) for img in letter]
     number_resized = [resize_image(img, target_height) for img in number]
+    print(letter_resized,number_resized)
 
     # Concatenate resized arrays
     character = np.concatenate((letter_resized, number_resized), axis=1)
@@ -96,6 +96,4 @@ def create_templates():
     # Save templates
     np.savez('NewTemplates', *NewTemplates)
 
-# Call the function
-create_templates()
 
