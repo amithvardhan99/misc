@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73349a0-0203-4c0a-be91-acf93c8484fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/controlling.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/create_templates.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/create_templates.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/guessthesix.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/guessthesix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/readLetter.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/take_boxes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/takeboxes.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brain Tumour Detection Using CNN/notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Brain Tumour Detection Using CNN/notebook.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/notebook.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/controlling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/controlling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/read_letter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/supported_functions/read_letter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +46,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -52,5 +64,8 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.m" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
