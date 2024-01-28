@@ -1,6 +1,5 @@
 import numpy as np
 from scipy.ndimage import label
-from scipy.stats import itemfreq
 from skimage.measure import regionprops
 from scipy.signal import find_peaks
 
@@ -48,12 +47,9 @@ def guess_the_six(Q, W, bsize):
     for l in range(5, 1, -1):  # This condition has to be changed accordingly if number plates are other than six characters.
         val = np.where(Q == l)[0]  # Find the indices corresponding to the value of frequency equals 'l'.
         var = len(val)  # Check how many indices are found.
-        if not var or var == 1:  # If no index or one index is found.
-            if var == 1:
-                index = val[0] + 1  # Since zero index is not allowed in NumPy.
-            else:
-                index = val[0]  # Assign that value to 'index'.
-            if len(Q) == val[0]:  # In case if the last index value is reached,
+        if var == 1:  # If one index is found.
+            index = val[0] + 1  # Since zero index is not allowed in NumPy.
+            if len(Q) == index:  # In case if the last index value is reached,
                 index = None  # then index+1 will be out of Q.
             if Q[index] + Q[index + 1] == 6:  # If the sum of frequencies with the subsequent bin equals six.
                 container = [W[index] - (bsize / 2), W[index + 1] + (bsize / 2)]  # Calculate container and break looping
@@ -61,14 +57,14 @@ def guess_the_six(Q, W, bsize):
             elif Q[index] + Q[index - 1] == 6:  # If the sum of frequencies with the previous bin equals six.
                 container = [W[index - 1] - (bsize / 2), W[index] + (bsize / 2)]  # Calculate container and break looping
                 break  # for more values.
-        else:  # If more than one index is found.
+        elif var > 1:  # If more than one index is found.
             M = np.zeros(var, dtype=bool)
             for k in range(var):  # Repeat the analysis for every value of the bin and checks for the same condition
                 if val[k] == 0:
                     index = val[k] + 1  # Since zero index is not allowed in NumPy.
                 else:
                     index = val[k]  # that where the sum of frequencies equals six.
-                if len(Q) == val[k]:  # In case if the last index value is reached,
+                if len(Q) == index:  # In case if the last index value is reached,
                     index = None  # then index+1 will be out of Q.
                 if Q[index] + Q[index + 1] == 6:
                     container = [W[index] - (bsize / 2), W[index + 1] + (bsize / 2)]  # Calculate the value of container and break.
@@ -83,6 +79,7 @@ def guess_the_six(Q, W, bsize):
     else:
         container = None  # If looping is done and no frequencies sum to six then assign container the empty matrix.
     return container
+
 
 def read_letter(snap, templates):
     snap = np.resize(snap, (42, 24))  # Resize the input image so it can be compared with the template's images.
