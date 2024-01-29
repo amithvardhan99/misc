@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73349a0-0203-4c0a-be91-acf93c8484fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brain Tumour Detection Using CNN/notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Brain Tumour Detection Using CNN/notebook.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/notebook.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
