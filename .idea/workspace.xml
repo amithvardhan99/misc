@@ -5,43 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73349a0-0203-4c0a-be91-acf93c8484fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/0.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/1.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/2.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/3.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/4.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/5.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/6.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/7.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/8.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/9.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/A.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/B.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/C.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/D.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/E.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/F.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/G.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/H.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/I.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/J.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/K.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/L.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/M.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/N.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/O.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/P.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/Q.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/R.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/S.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/T.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/U.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/V.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/W.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/X.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/Y.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/data/Z.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/number_detection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brain Tumour Detection Using CNN/notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Brain Tumour Detection Using CNN/notebook.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Detection of Vehicle Number on Licence Plate/notebook.ipynb" afterDir="false" />
