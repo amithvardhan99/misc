@@ -113,7 +113,7 @@ def detect_letters(image):
         print(i.shape)
         print(image_resized_grayscale.shape)
         print()
-        corr_matrix = sci_signal.correlate3d(i,image_resized_grayscale).max()
+        corr_matrix = sci_signal.correlate2d(i,image_resized_grayscale).max()
         corr_matrix_arr.append(corr_matrix)
     pos = np.argmax(corr_matrix_arr)
     det = identify_letter(pos)
