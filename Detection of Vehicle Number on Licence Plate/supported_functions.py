@@ -23,7 +23,7 @@ def create_templates():
     for i in total_character_codes:
         file_name = "data/" + chr(i) + ".bmp"
         image_read = cv2.imread(file_name)
-        character_dict[chr(i)] = cv2.cvtColor(src=image_read, code=cv2.COLOR_BGR2GRAY)
+        character_dict[chr(i)] = image_read
 
     character_list = np.array(list(character_dict.values()))
     return character_list
