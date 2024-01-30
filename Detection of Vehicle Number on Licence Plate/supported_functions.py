@@ -18,7 +18,7 @@ def create_templates():
     start_number = ord("0")
     end_number = ord("9") + 1
 
-    total_character_codes = sorted(list(range(start_letter,end_letter)) + list(range(start_number,end_number)))
+    total_character_codes = list(range(start_number,end_number)) + list(range(start_letter,end_letter))
 
     for i in total_character_codes:
         file_name = "data/" + chr(i) + ".bmp"
