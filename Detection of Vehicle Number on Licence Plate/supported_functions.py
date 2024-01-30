@@ -102,7 +102,7 @@ def identify_letter(pos):
         p = "9"
     else:
         p = "0"
-    return p
+    return pos
 
 def detect_letters(image):
     image_resized = cv2.resize(image,(24,42))
@@ -118,3 +118,4 @@ def detect_letters(image):
     pos = np.argmax(corr_matrix_arr)
     det = identify_letter(pos)
     return det
+#%%
