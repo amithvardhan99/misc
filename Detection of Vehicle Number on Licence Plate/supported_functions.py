@@ -23,7 +23,7 @@ def create_templates():
     for i in total_character_codes:
         file_name = "data/" + chr(i) + ".bmp"
         image_read = cv2.imread(file_name)
-        character_dict[chr(i)] = cv2.cvtColor(src=image_read,code=cv2.COLOR_BGR2GRAY)
+        character_dict[chr(i)] = cv2.cvtColor(src=image_read,code=cv2.COLOR_BGR2GRAY) / 255.0
 
     character_list = np.array(list(character_dict.values()))
     return character_list
@@ -31,7 +31,7 @@ def create_templates():
 
 def detect_letters(image):
     image_resized = cv2.resize(image,(24,42))
-    image_resized_grayscale = cv2.cvtColor(src=image_resized,code=cv2.COLOR_BGR2GRAY)
+    image_resized_grayscale = cv2.cvtColor(src=image_resized,code=cv2.COLOR_BGR2GRAY)  / 255.0
     ctr = 0
     corr_matrix_arr = []
     for i in create_templates():
