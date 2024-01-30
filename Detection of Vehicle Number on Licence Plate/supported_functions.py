@@ -35,15 +35,12 @@ def detect_letters(image):
     ctr = 0
     corr_matrix_arr = []
     for i in create_templates():
-        print(i.shape)
-        print(image_resized_grayscale.shape)
-        print()
         corr_matrix = sci_signal.correlate2d(i,image_resized_grayscale).max()
         corr_matrix_arr.append(corr_matrix)
     pos = np.argmax(corr_matrix_arr)
     if pos < 10:
         det = str(pos)
     else:
-        det = ord(55 + pos)
+        det = chr(55 + pos)
     return det
 #%%
