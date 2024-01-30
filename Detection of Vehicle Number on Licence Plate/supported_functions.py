@@ -23,7 +23,7 @@ def create_templates():
     for i in total_character_codes:
         file_name = "data/" + chr(i) + ".bmp"
         image_read = cv2.imread(file_name)
-        character_dict[chr(i)] = image_read
+        character_dict[chr(i)] = cv2.cvtColor(src=image_read,code=cv2.COLOR_BGR2GRAY)
 
     character_list = np.array(list(character_dict.values()))
     return character_list
@@ -106,13 +106,14 @@ def identify_letter(pos):
 
 def detect_letters(image):
     image_resized = cv2.resize(image,(24,42))
+    image_resized_grayscale = cv2.cvtColor(src=image_resized,code=cv2.COLOR_BGR2GRAY)
     ctr = 0
     corr_matrix_arr = []
     for i in create_templates():
         print(i.shape)
-        print(image_resized.shape)
+        print(image_resized_grayscale.shape)
         print()
-        corr_matrix = sci_signal.correlate2d(i,image_resized).max()
+        corr_matrix = sci_signal.correlate2d(i,image_resized_grayscale).max()
         corr_matrix_arr.append(corr_matrix)
     pos = np.argmax(corr_matrix_arr)
     det = identify_letter(pos)
