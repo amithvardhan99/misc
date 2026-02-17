@@ -1,0 +1,1 @@
+{"type": "function", "name": "file_writer_tool", "parameters": {"properties": {"filename": "2026_news_articles.md", "directory": "./", "overwrite": "false", "content": "AI LLMs 2024: Latest Developments and Insights"}}}
