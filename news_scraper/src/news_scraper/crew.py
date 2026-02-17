@@ -23,10 +23,10 @@ class NewsScraper():
     # If you would like to add tools to your agents, you can learn more about it here:
     # https://docs.crewai.com/concepts/agents#agent-tools
 
-    llm_model = LLM(
-        model="ollama/llama3.2:1b",
-        base_url="http://localhost:11434",
-    )
+    # llm_model = LLM(
+    #    model="ollama/llama3.2:1b",
+    #    base_url="http://localhost:11434",
+    #)
 
     @agent
     def google_search(self) -> Agent:
@@ -34,7 +34,7 @@ class NewsScraper():
             config=self.agents_config['google_search'], 
             tools=[SerperDevTool()],
             verbose=True,
-            llm=self.llm_model,
+            #llm=self.llm_model,
         )
 
     @agent
@@ -43,7 +43,7 @@ class NewsScraper():
             config=self.agents_config['news_scraper'], 
             tools=[ScrapeWebsiteTool()],
             verbose=True,
-            llm=self.llm_model,
+            #llm=self.llm_model,
         )
     
     @agent
@@ -52,7 +52,7 @@ class NewsScraper():
             config=self.agents_config['news_summariser'], 
             tools=[],
             verbose=True,
-            llm=self.llm_model,
+            #llm=self.llm_model,
         )
 
     @agent
@@ -61,7 +61,7 @@ class NewsScraper():
             config=self.agents_config['save_news_articles'], 
             tools=[FileWriterTool()],
             verbose=True,
-            llm=self.llm_model,
+            #llm=self.llm_model,
         )
 
     # To learn more about structured task outputs,
