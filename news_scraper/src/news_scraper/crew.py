@@ -1,8 +1,10 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 from crewai_tools import FileWriterTool, ScrapeWebsiteTool, SerperDevTool
+from dotenv import load_dotenv
+load_dotenv()
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -20,12 +22,19 @@ class NewsScraper():
     
     # If you would like to add tools to your agents, you can learn more about it here:
     # https://docs.crewai.com/concepts/agents#agent-tools
+
+    llm_model = LLM(
+        model="llama3.2:1b",
+        base_url="http://localhost:11434",
+    )
+
     @agent
     def google_search(self) -> Agent:
         return Agent(
             config=self.agents_config['google_search'], 
             tools=[SerperDevTool()],
-            verbose=True
+            verbose=True,
+            llm=llm_model,
         )
 
     @agent
@@ -33,15 +42,17 @@ class NewsScraper():
         return Agent(
             config=self.agents_config['news_scraper'], 
             tools=[ScrapeWebsiteTool()],
-            verbose=True
+            verbose=True,
+            llm=llm_model,
         )
     
     @agent
     def news_summariser(self) -> Agent:
         return Agent(
             config=self.agents_config['news_summariser'], 
-            tools=[Summa],
-            verbose=True
+            tools=[],
+            verbose=True,
+            llm=llm_model,
         )
 
     @agent
@@ -49,7 +60,8 @@ class NewsScraper():
         return Agent(
             config=self.agents_config['save_news_articles'], 
             tools=[FileWriterTool()],
-            verbose=True
+            verbose=True,
+            llm=llm_model,
         )
 
     # To learn more about structured task outputs,

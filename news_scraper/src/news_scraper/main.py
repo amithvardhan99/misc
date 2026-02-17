@@ -4,7 +4,8 @@ import warnings
 
 from datetime import datetime
 
-from news_scraper.crew import NewsScraper
+
+from crew import NewsScraper
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -19,7 +20,7 @@ def run():
     """
     inputs = {
         'topic': 'AI LLMs',
-        'current_year': str(datetime.now().year)
+        'date': str(datetime.now().year)
     }
 
     try:
