@@ -14,12 +14,14 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
-def run():
-    """
+"""
     Run the crew.
-    """
+"""
+"""
+def run():
+    
     inputs = {
-        'topic': 'AI LLMs',
+        'topic': "Can you retrieve latest news on Trump's immigration crackdown?",
         'date': str(datetime.now().year)
     }
 
@@ -27,6 +29,24 @@ def run():
         NewsScraper().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
+"""
 
+def run():
 
-run()
+    list_of_inputs = [
+        
+        {"topic": "Latest news on Anthropic's Claude", "date": str(datetime.now().year), "file_name": "anthropic"},
+        
+        {"topic": "How was Microsoft as an organisation performing compared to other tech giants like Google, Facebook etc.", "date": 2019, "file_name": "performance_of_organisations"},
+        
+        {"topic": "Flaws of Indian education system", "date": 2022, "file_name": "education"}
+
+    ]
+
+    try:
+        NewsScraper().crew().kickoff_for_each(list_of_inputs)
+    except Exception as e:
+        raise Exception(f"An error occurred while running the crew: {e}")
+
+if __name__ == "__main__":
+    run()

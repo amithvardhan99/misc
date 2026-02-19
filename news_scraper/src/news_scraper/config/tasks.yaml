@@ -1,9 +1,9 @@
 google_search_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given the current year is 2024.
+    Conduct a thorough search of news articles for this topic: {topic}
+    Make sure you find any interesting and relevant information until the current year {date}.
   expected_output: >
-    The list of 10 websites with the most relevant information about {topic}
+    The list of 10 websites with the most relevant information about this topic: {topic}
   agent: google_search
 
 news_scraper_task:
@@ -24,7 +24,7 @@ save_news_articles_task:
   description: >
     Write the news article to a file
   expected_output: >
-    A fully fledge news article with all information from previous task into a file named {date}_news_articles.md
+    A fully fledge news article with all information from previous task into a file named {file_name}.md
   agent: save_news_articles
 
   
