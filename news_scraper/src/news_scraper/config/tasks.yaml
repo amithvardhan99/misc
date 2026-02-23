@@ -17,7 +17,7 @@ news_summariser_task:
   description: >
     Write the news article to a file
   expected_output: >
-    A fully fledge news article with the main topics, each with a full section of information. Formatted as markdown without '```'
+    I need you to generate a summary to the entire scraped information to only 2 paragraphs. The summary should be properly formatted as markdown without '```'
   agent: news_summariser
   
 save_news_articles_task:
