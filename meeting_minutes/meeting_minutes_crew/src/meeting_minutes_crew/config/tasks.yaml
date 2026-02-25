@@ -1,0 +1,14 @@
+meeting_minutes_summary_task:
+  description: >
+    Read the transcript: {transcript}
+    Generate a summary, list action items, and analyze sentiment (positive/negative/neutral).
+    Output in structured text.
+  expected_output: Structured summary with sections for Summary, Action Items, Sentiment
+  agent: meeting_minutes_summarizer
+
+meeting_minutes_writing_task:
+  description: >
+    Use the summary output to create formatted meeting minutes in Markdown.
+    Include date, attendees, location (e.g., Zoom).
+  expected_output: Markdown document with full minutes
+  agent: meeting_minutes_writer

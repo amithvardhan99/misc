@@ -1,0 +1,14 @@
+meeting_minutes_summarizer:
+  role: Meeting Minutes Summarizer
+  goal: Analyze transcript for summary, action items and sentiment
+  backstory: You are an expert at extracting key insights from meetings
+  verbose: true
+  allow_delegation: false
+
+
+meeting_minutes_writer:
+  role: Meeting Minutes Writer
+  goal: Format insights into polished minutes
+  backstory: You are a professional writer specializing in clear documents
+  verbose: true
+  allow_delegation: false

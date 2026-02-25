@@ -5,22 +5,50 @@ from pydub.utils import make_chunks
 from pathlib import Path
 from openai import OpenAI
 from pydantic import BaseModel
-from crewai.flow import Flow, listen, start
-from .state import MeetingMinutesState
-from meeting_minutes.crews.poem_crew.poem_crew import PoemCrew
+from crewai.flow.flow import Flow, listen, start
+from state import MeetingMinutesState
+from dotenv import load_dotenv
+load_dotenv()
+from meeting_minutes_crew.crew import MeetingMinutesCrew
 
+import warnings
+warnings.filterwarnings("ignore")
 
-@Flow(state_class=MeetingMinutesState)
-class MeetingMinutesFlow:
+client = OpenAI()
+
+#@Flow(state_class=MeetingMinutesState)
+class MeetingMinutesFlow(Flow[MeetingMinutesState]):
 
     @start()
     def transcribe_meeting(self):
         audio_file = Path("earnings_call.wav")
         audio = AudioSegment.from_file(audio_file)
         chunks = make_chunks(audio, 60000)
+        
+        full_transcription = ""
         for i, chunk in enumerate(chunks):
-            chunk.export(f"chunk{i}.wav", format="wav")
-        print(chunks)
+            chunk.export("temp_chunk.wav", format="wav")
+            with open("temp_chunk.wav","rb") as f:
+                transcription = client.audio.transcriptions.create(model="whisper-1",file=f)
+            full_transcription += transcription.text
+            print(f"Transcribed chunk {i+1}/{len(chunks)}")
+        
+        self.state.transcript = full_transcription
+        print("Transcription complete")
+        print(self.state.transcript)
+    
+    @listen(transcribe_meeting)
+    def generate_meeting_minutes(self):
+        crew = MeetingMinutesCrew().crew()
+        inputs = {"transcript": self.state.transcript}
+        result = crew.kickoff(inputs=inputs)
+        self.state.meeting_minutes_summary = result
+        print("Minutes generated!")
+
+if __name__ == "__main__":
+    flow = MeetingMinutesFlow()
+    flow.kickoff()
+            
 
     """@start()
     def generate_sentence_count(self, crewai_trigger_payload: dict = None):
