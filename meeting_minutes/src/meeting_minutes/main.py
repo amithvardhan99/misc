@@ -10,6 +10,7 @@ from state import MeetingMinutesState
 from dotenv import load_dotenv
 load_dotenv()
 from meeting_minutes_crew.crew import MeetingMinutesCrew
+from meeting_minutes_crew.tools.gmail_tool import SendEmailTool
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -43,6 +44,10 @@ class MeetingMinutesFlow(Flow[MeetingMinutesState]):
         inputs = {"transcript": self.state.transcript}
         result = crew.kickoff(inputs=inputs)
         self.state.meeting_minutes_summary = result
+        with open("meeting_minutes.md", "w") as f:
+            f.write(result.raw)
+        tool = SendEmailTool()
+        tool.run(recipient="amithvardhangd3@gmail.com", subject="Meeting Minutes", body=self.state.meeting_minutes_summary)
         print("Minutes generated!")
 
 if __name__ == "__main__":
